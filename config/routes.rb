@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  resources :books
   defaults format: :json do
-    namespace :api do
-      namespace :v1 do
+    scope :api do
+      scope :v1 do
         devise_for :users, controllers: { 
           sessions: 'api/v1/users/sessions',
           registrations: 'api/v1/users/registrations'
         }
       end
     end
-    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+    namespace :api do
+      namespace :v1 do
+        resources :books
+      end
+    end
   end
 end
