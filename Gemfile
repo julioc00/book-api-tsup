@@ -40,3 +40,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise-jwt", "~> 0.12.1"
+
+gem "ostruct", "~> 0.6.0"
